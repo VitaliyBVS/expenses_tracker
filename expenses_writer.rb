@@ -14,6 +14,20 @@ end
 require "rexml/document" # подключаем парсер
 require "date" # будем использовать операции с данными
 
+begin
+current_path = File.dirname(__FILE__)
+file_name = current_path + "/my_expenses.xml"
+
+file = File.new(file_name, "r:UTF-8")
+doc = REXML::Document.new(file)
+file.close
+
+rescue Errno::ENOENT
+  abort "Файл не найден"
+rescue REXML::ParseException
+  abort "Ошибка в структуре XML файла"
+end
+
 puts "На что потратили деньги?"
 expense_text = STDIN.gets.chomp
 
@@ -34,12 +48,6 @@ end
 puts "В какую категорию занести трату"
 expense_category = STDIN.gets.chomp
 
-current_path = File.dirname(__FILE__)
-file_name = current_path + "/my_expenses.xml"
-
-file = File.new(file_name, "r:UTF-8")
-doc = REXML::Document.new(file)
-file.close
 
 expenses = doc.elements.find('expenses').first
 
