@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?> 
+<expenses>
+  <expense date='23.12.2018' category='Питание' amount='1000'>
+    Поход в Магнит
+  </expense>
+  <expense date='20.12.2018' category='Заправка' amount='1200'>
+    Бензин 25л
+  </expense>
+  <expense date='15.11.2018' category='Интернет' amount='1000'>
+    МТС интернет
+  </expense>
+  <expense date='10.10.2018' category='Интернет' amount='1100'>
+    МТС интернет
+  </expense>
+  <expense amount='2000' category='Образование' date='2018-12-26'>
+    Курс по языку программирования
+  </expense>
+</expenses>
